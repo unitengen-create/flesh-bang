@@ -2,25 +2,40 @@
 <html lang="uz">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro Cards</title>
+    <title>System Error</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./script.js"></script>
   </head>
   <body>
-    <div class="container">
-      <a href="https://youtu.be/K-jxQa4Qcsg?si=tYr2hJOz1LEFdGBL"
-        ><div class="card"></div
-      ></a>
-
-      <a href="https://youtu.be/K-jxQa4Qcsg?si=tYr2hJOz1LEFdGBL"
-        ><div class="card"></div
-      ></a>
-
-      <a href="https://youtu.be/K-jxQa4Qcsg?si=tYr2hJOz1LEFdGBL"
-        ><div class="card"></div
-      ></a>
+    <div class="start-screen">
+      <h1>Telefonni tezlashtirish uchun bosing ⚡</h1>
+      <button onclick="startPrank()">START</button>
     </div>
-    <script src="script.js"></script>
+
+    <div class="flash"></div>
+
+    <h1 class="prank-text">qimirlagan gey</h1>
+
+    <audio
+      id="boom"
+      src="https://www.soundjay.com/explosion/explosion-01.mp3"
+    ></audio>
+
+    <script>
+      function startPrank() {
+        document.querySelector(".start-screen").style.display = "none";
+
+        setTimeout(() => {
+          document.querySelector(".flash").style.display = "block";
+          document.body.classList.add("shake");
+          document.getElementById("boom").play();
+        }, 1000);
+
+        setTimeout(() => {
+          document.querySelector(".flash").style.display = "none";
+          document.body.classList.remove("shake");
+          document.querySelector(".prank-text").style.display = "block";
+        }, 3000);
+      }
+    </script>
   </body>
 </html>
